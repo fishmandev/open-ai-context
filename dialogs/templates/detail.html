@@ -1,0 +1,14 @@
+<a href="{% url 'dialogs:list' %}">List</a>
+<h4>{{ dialog.title }} | {{ dialog.description }}</h4>
+
+
+
+<form  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ dialog.title }}
+    <button type="submit">Send</button>
+</form>
+<hr>
+Request: {{ dialog.query_set.latest.req }}<br>
+Response: {{ dialog.query_set.latest.res }}
