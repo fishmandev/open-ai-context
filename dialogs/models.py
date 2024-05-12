@@ -17,6 +17,7 @@ class Query(models.Model):
     dialog = models.ForeignKey(Dialog, on_delete=models.CASCADE)
     req = models.TextField()
     res = models.TextField()
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         get_latest_by = ["id"]

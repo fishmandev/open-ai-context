@@ -8,5 +8,6 @@ admin.site.register([Dialog])
 class QueryAdmin(admin.ModelAdmin):
     list_display = (
         "req",
+        "is_active",
         "dialog",
     )
