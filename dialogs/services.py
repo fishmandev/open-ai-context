@@ -23,6 +23,8 @@ def send_request(dialog: Dialog, req: str) -> str:
             query = dialog.query_set.filter(is_active=True).first()
             query.is_active = False
             query.save()
-            return send_request(dialog, req)                   
-        
+            return send_request(dialog, req)
+        else:
+            raise e
+
     return completion.choices[0].message.content
