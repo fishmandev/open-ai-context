@@ -28,6 +28,7 @@ class DetailView(generic.CreateView, generic.DetailView):
         return initial
 
     def form_valid(self, form):
-        res = send_request(form.instance.dialog, form.instance.req)
+        total_tokens, res = send_request(form.instance.dialog, form.instance.req)
         form.instance.res = res
+        form.instance.total_tokens = total_tokens
         return super().form_valid(form)

@@ -10,4 +10,5 @@ class QueryAdmin(admin.ModelAdmin):
         "req",
         "is_active",
         "dialog",
+        "total_tokens",
     )

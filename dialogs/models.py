@@ -18,6 +18,7 @@ class Query(models.Model):
     req = models.TextField()
     res = models.TextField()
     is_active = models.BooleanField(default=True)
+    total_tokens = models.IntegerField(default=0)
 
     class Meta:
         get_latest_by = ["id"]
